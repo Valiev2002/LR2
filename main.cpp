@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -35,11 +36,12 @@ int main() {
     cout << "Task 2 completed" << endl;
     //task 3
     cout << "Task 3 " << endl;
-    int x, y;
+    int x;
+    double y;
     cout << "Enter x value: " << endl;
     cin >> x;
-    y = x % 4;
-    switch (y) {
+    int q= x % 4;
+    switch (q) {
         case 0:
             cout << "y(x)=" << 0 << endl;
             break;
@@ -56,25 +58,25 @@ int main() {
     cout << "Task 3 completed" << endl;
     //task 4
     cout << "Task 4" << endl;
-      cout << "Enter x" << endl;
+    cout << "Enter x" << endl;
     double x1;
     cin >> x1;
-    int n;
+    int n=1;
     y = sin(x1);
-    long double z;
-    long double m;
-    int b = 1;
+    double z;
+    double m;
+    z=x1;
+    double b;
     for (int i=-2; i>=-6;--i) {
-        n = 1;
-        z = 1.0*x1;
-        m = -1.0*pow(x1, 3) / fact(3.0);
-        while ((y-z) >= 0.001) {
-            n++;
+        b= pow(10,i);
+         do
+             {
+            m = pow(-1,n)*pow(x1, 2*n+1) / (fact(2 * n + 1));
             z += m;
-            m = -1.0 *m*pow(x1, 2) / ((2.0 * n + 1.0) * 2.0 * n);
-            cout << y << " " << z << endl;
-                   }
-        b *= 0.1;
+            n++;
+        }
+        while (abs(y-z) >=b);
+        cout << y << " " << z << endl;
         cout << "for 10^" << i << " required iterations :" << n << endl;
     }
     return 0;
